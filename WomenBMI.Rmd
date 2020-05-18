@@ -1,0 +1,57 @@
+---
+title: "Height and Weight in Women"
+author: "Angela"
+date: "5/18/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview of Assignmennt
+
+After makinng a ShinyApp, it's time to make your pitch. You get 5 slides (inclusive of the title slide) to pitch a your app. You're going to create a web page using Slidify or Rstudio Presenter with an html5 slide deck. Your presentation must satisfy the following:  
+
+-It must be done in Slidify or Rstudio Presenter  
+-It must be 5 pages  
+-It must be hosted on github or Rpubs  
+-It must contained some embedded R code that gets run when slidifying the document  
+
+## Import Data
+
+Using the "women" dataset from base R. This dataset represents the average heights and weights of American women. My App allows the users to compare themselves to the average.
+
+```{r dataset,  comment = " ", format = "markdown"}
+data(women)
+head(women)
+```
+
+## Using the App
+
+1. First the user needs to input their height.  
+2. Then the user needs to input their weight.  
+3. This will give them a BMI calculation.
+4. See the intersect between the red and blue line and compare yourself to the average (open dot) American women height and weight.
+ 
+## BMI Calculation
+
+For example:  
+
+```{r BMI calc, include = TRUE, echo = TRUE}
+height <- 70 #inches
+weight <- 120 #pounds (lbs)
+BMI <- (703 * weight / (height^2))
+BMI
+```
+
+## Healthy BMI
+
+How do you know if you are healthy or not?  
+  
+  
+Less than 18.5 = underweight  
+
+18.5-24.9 = ideal  
+
+Greater than 30 = obese  
